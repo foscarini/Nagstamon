@@ -574,12 +574,12 @@ class CentreonServer(GenericServer):
         """
         # renewing the SID once an hour might be enough
         # maybe this is unnecessary now that we authenticate via login/password, no md5
-        if self.SIDcount >= 3600:
-            if str(self.conf.debug_mode) == "True":
-                self.Debug(server=self.get_name(), debug="Old SID: " + self.SID + " " + str(self.Cookie))
-            self.SID = self._get_sid().result
-            if str(self.conf.debug_mode) == "True":
-                self.Debug(server=self.get_name(), debug="New SID: " + self.SID + " " + str(self.Cookie))
-            self.SIDcount = 0
-        else:
-            self.SIDcount += 1
+        #if self.SIDcount >= 3600:
+        #    if str(self.conf.debug_mode) == "True":
+        #        self.Debug(server=self.get_name(), debug="Old SID: " + self.SID + " " + str(self.Cookie))
+        #    self.SID = self._get_sid().result
+        #    if str(self.conf.debug_mode) == "True":
+        #        self.Debug(server=self.get_name(), debug="New SID: " + self.SID + " " + str(self.Cookie))
+        #    self.SIDcount = 0
+        #else:
+        #    self.SIDcount += 1
