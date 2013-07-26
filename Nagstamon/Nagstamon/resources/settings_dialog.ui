@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.20"/>
+  <requires lib="gtk+" version="2.18"/>
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkAdjustment" id="adjustment_hours">
     <property name="upper">100</property>
@@ -35,7 +35,6 @@
     <property name="default_height">260</property>
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">dialog</property>
-    <property name="mnemonics_visible">False</property>
     <signal name="close" handler="settings_dialog_close" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog_vbox">

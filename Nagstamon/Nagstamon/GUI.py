@@ -369,7 +369,7 @@ class GUI(object):
                 try:
                     # otherwise it must be shown, full of problems
                     self.popwin.ServerVBoxes[server.get_name()].show()
-                    self.popwin.ServerVBoxes[server.get_name()].set_visible(True)
+                    #self.popwin.ServerVBoxes[server.get_name()].set_visible(True)
                     self.popwin.ServerVBoxes[server.get_name()].set_no_show_all(False)
 
                     # if needed show auth line:
@@ -400,12 +400,12 @@ class GUI(object):
                        server.status_description == "":
                         # ... there is no need to show a label or treeview...
                         self.popwin.ServerVBoxes[server.get_name()].hide()
-                        self.popwin.ServerVBoxes[server.get_name()].set_visible(False)
+                        #self.popwin.ServerVBoxes[server.get_name()].set_visible(False)
                         self.popwin.ServerVBoxes[server.get_name()].set_no_show_all(True)
                         self.status_ok = True
                     else:
                         # otherwise it must be shown, full of problems
-                        self.popwin.ServerVBoxes[server.get_name()].set_visible(True)
+                        #self.popwin.ServerVBoxes[server.get_name()].set_visible(True)
                         self.popwin.ServerVBoxes[server.get_name()].set_no_show_all(False)
                         self.popwin.ServerVBoxes[server.get_name()].show_all()
                         self.status_ok = False
@@ -1835,7 +1835,7 @@ class Popwin(object):
             # for not letting statusbar throw a shadow onto popwin in any composition-window-manager this helps to
             # keep a more consistent look - copied from StatusBar... anyway, doesn't work... well, next attempt:
             # Windows will have an entry on taskbar when not using HINT_UTILITY
-            self.Window.set_visible(False)
+            #self.Window.set_visible(False)
             if platform.system() == "Windows":
                 self.Window.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_UTILITY)
             else:
@@ -1933,7 +1933,7 @@ class Popwin(object):
                 self.output.statusbar.Moving = False
 
                 self.Window.show_all()
-                self.Window.set_visible(True)
+                #self.Window.set_visible(True)
 
                 # position and resize...
                 self.calculate_coordinates = True
@@ -2045,8 +2045,8 @@ class Popwin(object):
             if self.output.GUILock.has_key("Popwin"):
                 # use gobject.idle_add() to be thread safe
                 gobject.idle_add(self.output.DeleteGUILock, self.__class__.__name__)
-            #self.Window.hide_all()
-            self.Window.set_visible(False)
+            self.Window.hide_all()
+            #self.Window.set_visible(False)
             # notification off because user had a look to hosts/services recently
             self.output.NotificationOff()
 
@@ -2321,7 +2321,7 @@ class ServerVBox(gtk.VBox):
         self.HBoxAuth = gtk.HBox()
         self.AuthLabelUsername = gtk.Label("Username:")
         self.AuthEntryUsername = gtk.Entry()
-        self.AuthEntryUsername.set_can_focus(True)
+        #self.AuthEntryUsername.set_can_focus(True)
         self.AuthLabelPassword = gtk.Label("Password:")
         self.AuthEntryPassword = gtk.Entry()
         self.AuthEntryPassword.set_visibility(False)
@@ -3125,7 +3125,7 @@ class Settings(object):
                 if not server.get_name() in self.output.popwin.ServerVBoxes:
                     self.output.popwin.ServerVBoxes[server.get_name()] = self.output.popwin.CreateServerVBox(server.get_name(), self.output)
                     if str(self.conf.servers[server.get_name()].enabled)== "True":
-                        self.output.popwin.ServerVBoxes[server.get_name()].set_visible(True)
+                        #self.output.popwin.ServerVBoxes[server.get_name()].set_visible(True)
                         self.output.popwin.ServerVBoxes[server.get_name()].set_no_show_all(False)
                         self.output.popwin.ServerVBoxes[server.get_name()].show_all()
                         self.output.popwin.ServerVBoxes[server.get_name()].Label.set_markup('<span weight="bold" size="large">' + server.get_username() + "@" + server.get_name() + '</span>')
@@ -3502,15 +3502,15 @@ class GenericServer(object):
         # make everything visible
         for item_id in ["label_monitor_cgi_url", "input_entry_monitor_cgi_url", "input_checkbutton_use_autologin", "label_autologin_key", "input_entry_autologin_key"]:
             item = self.builder.get_object(item_id)
-            if item is not None:
-                item.set_visible(True)
+            #if item is not None:
+            #    item.set_visible(True)
 
         # so we can hide what may be hidden
         if len(server.DISABLED_CONTROLS) != 0:
             for item_id in server.DISABLED_CONTROLS:
                 item = self.builder.get_object(item_id)
-                if item is not None:
-                    item.set_visible(False)
+            #    if item is not None:
+            #        item.set_visible(False)
 
 
     def OK(self, widget):
