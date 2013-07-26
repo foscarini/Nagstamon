@@ -1044,7 +1044,7 @@ class GenericServer(object):
             self.init_HTTP()
             # to avoid race condition and credentials leak use local HTTPheaders
             HTTPheaders = self.HTTPheaders
-            HTTPheaders[giveback]['User-Agent'] = 'Nagstamon_0.9.11-devel/UFRGS_1.0'
+            HTTPheaders[giveback]['User-Agent'] = 'ufrgs-agstamon_0.9.11'
         else:
             HTTPheaders = dict()
             HTTPheaders["raw"] = HTTPheaders["obj"] = HTTPheaders["obj"] =  dict()
