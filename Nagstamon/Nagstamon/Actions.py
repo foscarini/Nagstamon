@@ -412,7 +412,7 @@ class CheckForNewVersion(threading.Thread):
     def run(self):
         """
         try all servers respectively their net connections, one of them should be able to connect
-        to nagstamon.sourceforge.net
+        to nagstamon.ufrgs.br
         """
 
         # debug
@@ -814,7 +814,7 @@ def OpenNagstamonDownload(output=None):
     # first close popwin
     output.popwin.Close()
     # start browser with URL
-    webbrowser.open("http://nagstamon.sourceforge.net/download")
+    webbrowser.open("http://nagstamon.ufrgs.br/download")
 
 
 def IsFoundByRE(string, pattern, reverse):
