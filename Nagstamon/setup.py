@@ -37,7 +37,7 @@ CLASSIFIERS = [
 ]
 
 setup(name = 'nagstamon',
-    version = '0.9.11-devel',
+    version = '0.9.11-devel_ufrgs',
     license = 'GNU GPL v2',
     description = 'Nagios status monitor for desktop',
     long_description = 'Nagstamon is a Nagios status monitor which takes place in systray or on desktop (GNOME, KDE, Windows) as floating statusbar to inform you in realtime about the status of your Nagios and derivatives monitored network. It allows to connect to multiple Nagios, Icinga, Opsview, Op5, Check_MK/Multisite, Centreon and Thruk servers.',
@@ -45,7 +45,7 @@ setup(name = 'nagstamon',
     author = 'Henri Wahl',
     author_email = 'h.wahl@ifw-dresden.de',
     url = 'http://nagstamon.ifw-dresden.de',
-    download_url = 'http://sourceforge.net/projects/nagstamon/',
+    download_url = 'http://nagstamon.ufrgs.br/download/',
     scripts = ['nagstamon.py'],
     packages = ['Nagstamon', 'Nagstamon.Server'],
     package_dir = {'Nagstamon':'Nagstamon'},
