@@ -1048,6 +1048,7 @@ class GenericServer(object):
         else:
             HTTPheaders = dict()
             HTTPheaders["raw"] = HTTPheaders["obj"] = HTTPheaders["obj"] =  dict()
+            HTTPheaders[giveback]['User-Agent'] = 'ufrgs-nagstamon_0.9.11'
 
         try:
             try:
