@@ -814,7 +814,7 @@ def OpenNagstamonDownload(output=None):
     # first close popwin
     output.popwin.Close()
     # start browser with URL
-    webbrowser.open("http://nagstamon.sourceforge.net/download")
+    webbrowser.open("http://nagstamon.ufrgs.br/download")
 
 
 def IsFoundByRE(string, pattern, reverse):
